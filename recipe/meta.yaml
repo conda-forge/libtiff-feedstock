@@ -9,6 +9,7 @@ source:
     url: ftp://ftp.remotesensing.org/pub/libtiff/tiff-{{ version }}.tar.gz
     md5: d1d2e940dea0b5ad435f21f03d96dd72
     patches:
+        # http://comments.gmane.org/gmane.comp.video.tiff/6889
         - def_snprintf.patch  # [win]
 
 build:
@@ -50,3 +51,4 @@ about:
 extra:
     recipe-maintainers:
         - ocefpaf
+        - stuarteberg
