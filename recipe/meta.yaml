@@ -19,7 +19,7 @@ build:
         - vc14  # [win and py35]
 
 build:
-    number: 0
+    number: 1
 
 requirements:
     build:
