@@ -19,19 +19,19 @@ build:
         - vc14  # [win and py35]
 
 build:
-    number: 2
+    number: 3
 
 requirements:
     build:
         - python  # [win]
         - cmake  # [win]
-        - zlib
-        - jpeg 9b
-        - xz  # [not win]
+        - zlib 1.2*
+        - jpeg 9*
+        - xz 5.2.*  # [not win]
     run:
-        - zlib
-        - jpeg 9b
-        - xz  # [not win]
+        - zlib 1.2*
+        - jpeg 9*
+        - xz 5.2.*  # [not win]
 
 test:
     commands:
