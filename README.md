@@ -5,7 +5,7 @@ Home: http://www.remotesensing.org/libtiff/
 
 Package license: HPND
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Support for the Tag Image File Format (TIFF)
 
