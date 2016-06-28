@@ -13,7 +13,7 @@ source:
         - def_snprintf.patch  # [win]
 
 build:
-    number: 4
+    number: 5
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
@@ -24,6 +24,7 @@ requirements:
     build:
         - python  # [win]
         - cmake  # [win]
+        - toolchain
         - zlib 1.2*
         - jpeg 9*
         - xz 5.0.*  # [not win]
