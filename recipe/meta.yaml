@@ -24,6 +24,7 @@ requirements:
     build:
         - python  # [win]
         - cmake  # [win]
+        - toolchain
         - zlib 1.2*
         - jpeg 9*
         - xz 5.0.*  # [not win]
