@@ -1,4 +1,4 @@
-{% set version = "4.0.6" %}
+{% set version = "4.0.8" %}
 
 package:
   name: libtiff
@@ -6,14 +6,14 @@ package:
 
 source:
   fn: tiff-{{ version }}.tar.gz
-  url: http://download.osgeo.org/libtiff/tiff-4.0.6.tar.gz
-  sha256: 4d57a50907b510e3049a4bba0d7888930fdfc16ce49f1bf693e5b6247370d68c
+  url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
+  sha256: 59d7a5a8ccd92059913f246877db95a2918e6c04fb9d43fd74e5c3390dac2910
   patches:
     # http://comments.gmane.org/gmane.comp.video.tiff/6889
     - def_snprintf.patch  # [win]
 
 build:
-  number: 7
+  number: 0
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
