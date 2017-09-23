@@ -13,30 +13,34 @@ source:
     - def_snprintf.patch  # [win]
 
 build:
-  number: 7
+  number: 8
+  skip: true  # [win and py35]
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
     - vc14  # [win and py35]
+    - vc14  # [win and py36]
 
 requirements:
   build:
     - python  # [win]
     - cmake  # [win]
     - toolchain
-    - zlib 1.2.*
+    - zlib 1.2.8
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
+    - vc 14  # [win and py36]
   run:
-    - zlib 1.2.*
+    - zlib 1.2.8
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
+    - vc 14  # [win and py36]
 
 test:
   commands:
