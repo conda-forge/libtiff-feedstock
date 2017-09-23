@@ -18,6 +18,7 @@ build:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
     - vc14  # [win and py35]
+    - vc14  # [win and py36]
 
 requirements:
   build:
@@ -30,6 +31,7 @@ requirements:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
+    - vc 14  # [win and py36]
   run:
     - zlib 1.2.*
     - jpeg 9*
@@ -37,6 +39,7 @@ requirements:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py35]
+    - vc 14  # [win and py36]
 
 test:
   commands:
