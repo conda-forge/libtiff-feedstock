@@ -26,7 +26,7 @@ requirements:
     - python  # [win]
     - cmake  # [win]
     - toolchain
-    - zlib 1.2.*
+    - zlib 1.2.8
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
@@ -34,7 +34,7 @@ requirements:
     - vc 14  # [win and py35]
     - vc 14  # [win and py36]
   run:
-    - zlib 1.2.*
+    - zlib 1.2.8
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
