@@ -13,7 +13,7 @@ source:
     - def_snprintf.patch  # [win]
 
 build:
-  number: 7
+  number: 8
   skip: true  # [win and py35]
   features:
     - vc9  # [win and py27]
