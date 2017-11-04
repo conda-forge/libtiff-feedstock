@@ -5,39 +5,33 @@ package:
   version: {{ version }}
 
 source:
-  fn: tiff-{{ version }}.tar.gz
   url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
   sha256: 9f43a2cfb9589e5cecaa66e16bf87f814c945f22df7ba600d63aac4632c4f019
 
 build:
-  number: 0
-  skip: true  # [win and py35]
+  number: 1
+  skip: true  # [win and py36]
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
-    - vc14  # [win and py35]
-    - vc14  # [win and py36]
+    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
     - python  # [win]
     - cmake  # [win]
     - toolchain
-    - zlib 1.2.8
+    - zlib 1.2.11
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
-    - vc 14  # [win and py36]
+    - vc 14  # [win and (py35 or py36)]
   run:
-    - zlib 1.2.8
+    - zlib 1.2.11
     - jpeg 9*
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
-    - vc 14  # [win and py36]
+    - vc 14  # [win and (py35 or py36)]
 
 test:
   commands:
@@ -47,8 +41,8 @@ test:
     - test -f ${PREFIX}/lib/libtiff.dylib  # [osx]
     - test -f ${PREFIX}/lib/libtiffxx.so  # [linux]
     - test -f ${PREFIX}/lib/libtiffxx.dylib  # [osx]
-    #- conda inspect linkages -p $PREFIX libtiff  # [not win]
-    #- conda inspect objects -p $PREFIX libtiff  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.remotesensing.org/libtiff/
