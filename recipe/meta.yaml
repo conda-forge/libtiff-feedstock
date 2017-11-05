@@ -1,4 +1,4 @@
-{% set version = "4.0.7" %}
+{% set version = "4.0.8" %}
 
 package:
   name: libtiff
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: 9f43a2cfb9589e5cecaa66e16bf87f814c945f22df7ba600d63aac4632c4f019
+  sha256: 59d7a5a8ccd92059913f246877db95a2918e6c04fb9d43fd74e5c3390dac2910
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and py36]
   features:
     - vc9  # [win and py27]
