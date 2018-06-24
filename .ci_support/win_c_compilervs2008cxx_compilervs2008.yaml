@@ -1,0 +1,20 @@
+c_compiler:
+- vs2008
+cxx_compiler:
+- vs2008
+jpeg:
+- '9'
+pin_run_as_build:
+  jpeg:
+    max_pin: x
+  xz:
+    max_pin: x.x
+  zlib:
+    max_pin: x.x
+xz:
+- '5.2'
+zip_keys:
+- - c_compiler
+  - cxx_compiler
+zlib:
+- '1.2'
