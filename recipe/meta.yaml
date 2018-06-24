@@ -10,27 +10,20 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py36]
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
-    - python  # [win]
     - cmake  # [win]
-    - toolchain
-    - zlib 1.2.11
-    - jpeg 9*
-    - xz 5.2.*  # [not win]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - zlib
+    - jpeg
+    - xz        # [not win]
   run:
-    - zlib 1.2.11
-    - jpeg 9*
-    - xz 5.2.*  # [not win]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - zlib
+    - jpeg
+    - xz        # [not win]
 
 test:
   commands:
