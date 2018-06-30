@@ -7,9 +7,21 @@ package:
 source:
   url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
   sha256: 6e7bdeec2c310734e734d19aae3a71ebe37a4d842e0e23dbb1b8921c0026cfcd
+  patches:
+    - 0001-CVE-2017-9935.patch
+    - 0002-CVE-2017-18013.patch
+    - 0003-CVE-2018-5784.patch
+    - 0004-CVE-2017-11613_part1.patch
+    - 0005-CVE-2017-11613_part2.patch
+    - 0006-CVE-2018-7456.patch
+    - 0007-CVE-2017-17095.patch
 
 build:
-  number: 0
+  number: 1
+  # Does a very good job of maintaining compatibility.
+  #    https://abi-laboratory.pro/tracker/timeline/libtiff/
+  run_exports:
+    - {{ pin_subpackage('libtiff', max_pin='x') }}
 
 requirements:
   build:
@@ -19,20 +31,18 @@ requirements:
   host:
     - zlib
     - jpeg
-    - xz        # [not win]
+    - xz  # [not win]
   run:
     - zlib
     - jpeg
-    - xz        # [not win]
+    - xz  # [not win]
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libtiff.a  # [unix]
-    - test -f ${PREFIX}/lib/libtiffxx.a  # [unix]
-    - test -f ${PREFIX}/lib/libtiff.so  # [linux]
-    - test -f ${PREFIX}/lib/libtiff.dylib  # [osx]
-    - test -f ${PREFIX}/lib/libtiffxx.so  # [linux]
-    - test -f ${PREFIX}/lib/libtiffxx.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libtiff.a  # [not win]
+    - test -f ${PREFIX}/lib/libtiffxx.a  # [not win]
+    - test -f ${PREFIX}/lib/libtiff${SHLIB_EXT}  # [not win]
+    - test -f ${PREFIX}/lib/libtiffxx${SHLIB_EXT}  # [not win]
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
@@ -47,3 +57,4 @@ extra:
     - jakirkham
     - ocefpaf
     - stuarteberg
+    - msarahan
