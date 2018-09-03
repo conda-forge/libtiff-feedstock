@@ -25,3 +25,6 @@ rm -rf "${TIFF_BIN}" "${TIFF_SHARE}" "${TIFF_DOC}"
 
 # For some reason --docdir is not respected above.
 rm -rf "${PREFIX}/share"
+
+# We can remove this when we start using the new conda-build.
+find $PREFIX -name '*.la' -delete
