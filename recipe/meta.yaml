@@ -17,7 +17,7 @@ source:
     - 0007-CVE-2017-17095.patch
 
 build:
-  number: 2
+  number: 1002
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
   run_exports:
