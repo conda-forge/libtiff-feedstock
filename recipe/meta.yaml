@@ -1,4 +1,4 @@
-{% set version = "4.0.9" %}
+{% set version = "4.0.10" %}
 
 package:
   name: libtiff
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: 6e7bdeec2c310734e734d19aae3a71ebe37a4d842e0e23dbb1b8921c0026cfcd
+  sha256: 2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4
   patches:
     - 0001-CVE-2017-9935.patch
     - 0002-CVE-2017-18013.patch
@@ -17,7 +17,7 @@ source:
     - 0007-CVE-2017-17095.patch
 
 build:
-  number: 1002
+  number: 1000
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
   run_exports:
