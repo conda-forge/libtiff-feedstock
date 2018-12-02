@@ -7,6 +7,9 @@ package:
 source:
   url: http://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
   sha256: 2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4
+  patches:
+    - patches/fix_TIFFReadRawStrip_man_page_typo.patch
+    - patches/fixed_lossless_webp_compression_config.patch
 
 build:
   number: 1000
@@ -35,8 +38,6 @@ test:
     - test -f ${PREFIX}/lib/libtiffxx.a  # [not win]
     - test -f ${PREFIX}/lib/libtiff${SHLIB_EXT}  # [not win]
     - test -f ${PREFIX}/lib/libtiffxx${SHLIB_EXT}  # [not win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.remotesensing.org/libtiff/
