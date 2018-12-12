@@ -43,10 +43,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libtiff.a                            # [unix]
     - test -f ${PREFIX}/lib/libtiffxx.a                          # [unix]
-    - test -f ${PREFIX}/lib/libtiff.so                           # [linux]
-    - test -f ${PREFIX}/lib/libtiffxx.so                         # [linux]
-    - test -f ${PREFIX}/lib/libtiff.dylib                        # [osx]
-    - test -f ${PREFIX}/lib/libtiffxx.dylib                      # [osx]
+    - test -f ${PREFIX}/lib/libtiff${SHLIB_EXT}                  # [unix]
+    - test -f ${PREFIX}/lib/libtiffxx${SHLIB_EXT}                # [unix]
     - if not exist %PREFIX%\\Library\\bin\\tiff.dll exit 1       # [win]
     - if not exist %PREFIX%\\Library\\bin\\tiffxx.dll exit 1     # [win]
     - if not exist %PREFIX%\\Library\\bin\\libtiff.dll exit 1    # [win]
