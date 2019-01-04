@@ -14,6 +14,9 @@ fi
             --with-zlib-lib-dir="${PREFIX}/lib" \
             --with-jpeg-include-dir="${PREFIX}/include" \
             --with-jpeg-lib-dir="${PREFIX}/lib" \
+            --enable-jpeg12 \
+            --with-jpeg12-include-dir="${PREFIX}/include" \
+            --with-jpeg12-lib="${PREFIX}/lib" \
             --with-lzma-include-dir="${PREFIX}/include" \
             --with-lzma-lib-dir="${PREFIX}/lib"
 

@@ -6,6 +6,8 @@ cmake -G"%CMAKE_GENERATOR%"                      ^
       -DCMAKE_BUILD_TYPE=Release                 ^
       -DCMAKE_C_FLAGS="%CFLAGS% -DWIN32"         ^
       -DCMAKE_CXX_FLAGS="%CXXFLAGS% -EHsc"       ^
+      -DJPEG12_INCLUDE_DIR="%LIBRARY_INC%        ^
+      -DJPEG12_LIBRARY="%LIBRARY_LIB%\libjpeg.lib" ^
       -DCMAKE_SHARED_LIBRARY_PREFIX=""           ^
       ..
 if errorlevel 1 exit /b 1
