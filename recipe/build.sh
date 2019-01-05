@@ -16,7 +16,7 @@ fi
             --with-jpeg-lib-dir="${PREFIX}/lib" \
             --enable-jpeg12 \
             --with-jpeg12-include-dir="${PREFIX}/include" \
-            --with-jpeg12-lib="${PREFIX}/lib/libjpeg.${SHLIB_EXT}" \
+            --with-jpeg12-lib="${PREFIX}/lib/libjpeg${SHLIB_EXT}" \
             --with-lzma-include-dir="${PREFIX}/include" \
             --with-lzma-lib-dir="${PREFIX}/lib"
 
