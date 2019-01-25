@@ -11,10 +11,18 @@ jpeg:
 pin_run_as_build:
   jpeg:
     max_pin: x
+  xz:
+    max_pin: x.x
   zlib:
     max_pin: x.x
+  zstd:
+    max_pin: x.x.x
+xz:
+- '5.2'
 zip_keys:
 - - c_compiler
   - cxx_compiler
 zlib:
 - '1.2'
+zstd:
+- 1.3.3
