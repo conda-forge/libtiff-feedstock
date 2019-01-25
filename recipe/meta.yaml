@@ -14,7 +14,7 @@ source:
     - patches/fixed_lossless_webp_compression_config.patch
 
 build:
-  number: 1001
+  number: 1002
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
   run_exports:
@@ -33,11 +33,13 @@ requirements:
   host:
     - zlib
     - jpeg
-    - xz  # [not win]
+    - xz
+    - zstd
   run:
     - zlib
     - jpeg
-    - xz  # [not win]
+    - xz
+    - zstd
 
 test:
   commands:
