@@ -30,6 +30,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake   # [win]
+    - ninja   # [win]
     - make    # [not win]
   host:
     - zlib
