@@ -14,7 +14,7 @@ source:
     - patches/fixed_lossless_webp_compression_config.patch
 
 build:
-  number: 1003
+  number: 1004
   skip: True  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
@@ -30,6 +30,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake   # [win]
+    - ninja   # [win]
     - make    # [not win]
   host:
     - zlib
