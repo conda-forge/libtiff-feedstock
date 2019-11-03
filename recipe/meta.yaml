@@ -1,4 +1,4 @@
-{% set version = "4.0.10" %}
+{% set version = "4.1.0" %}
 
 package:
   name: libtiff
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: 2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4
+  sha256: 5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634
   patches:
     - patches/0001-CVE-2017-11613_part1.patch
     - patches/0002-CVE-2017-11613_part2.patch
@@ -14,7 +14,7 @@ source:
     - patches/fixed_lossless_webp_compression_config.patch
 
 build:
-  number: 1004
+  number: 0
   skip: True  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
