@@ -11,7 +11,6 @@ source:
     - patches/0001-CVE-2017-11613_part1.patch
     - patches/0002-CVE-2017-11613_part2.patch
     - patches/fix_TIFFReadRawStrip_man_page_typo.patch
-    - patches/fixed_lossless_webp_compression_config.patch
 
 build:
   number: 0
