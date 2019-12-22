@@ -8,9 +8,13 @@ cxx_compiler:
 - vs2015
 jpeg:
 - '9'
+libwebp:
+- '1.0'
 pin_run_as_build:
   jpeg:
     max_pin: x
+  libwebp:
+    max_pin: x.x
   vc:
     max_pin: x
   xz:
