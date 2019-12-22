@@ -36,11 +36,13 @@ requirements:
     - jpeg
     - xz
     - zstd
+    - libwebp
   run:
     - zlib
     - jpeg
     - xz
     - zstd
+    - libwebp
 
 test:
   commands:
