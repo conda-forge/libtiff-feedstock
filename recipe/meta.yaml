@@ -13,7 +13,7 @@ source:
     - patches/fix_TIFFReadRawStrip_man_page_typo.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
