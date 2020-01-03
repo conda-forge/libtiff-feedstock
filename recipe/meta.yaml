@@ -13,6 +13,8 @@ source:
     - patches/fix_TIFFReadRawStrip_man_page_typo.patch
     # https://github.com/python-pillow/Pillow/issues/4237
     # https://gitlab.com/libtiff/libtiff/issues/173
+    # This change isn't so safe as it stops compatibility with libtiff on pypi
+    # https://github.com/conda-forge/libtiff-feedstock/pull/49#issuecomment-570708183
     # - patches/173_tif_unix_and_tif_win32_compatibility.patch
 
 build:
