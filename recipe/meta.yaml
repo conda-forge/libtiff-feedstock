@@ -11,9 +11,12 @@ source:
     - patches/0001-CVE-2017-11613_part1.patch
     - patches/0002-CVE-2017-11613_part2.patch
     - patches/fix_TIFFReadRawStrip_man_page_typo.patch
+    # https://github.com/python-pillow/Pillow/issues/4237
+    # https://gitlab.com/libtiff/libtiff/issues/173
+    - patches/173_tif_unix_and_tif_win32_compatibility.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
