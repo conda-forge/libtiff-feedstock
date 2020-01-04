@@ -58,9 +58,10 @@ test:
     - tifffile
   files:
     - hopper_lzw.tif
+    - downstream_tests.py
   commands:
-    - python -c "from PIL import Image; Image.open('hopper_lzw.tif').load(); print('success')"
-    - python -c "import cv2; cv2.imread('hopper_lzw.tif'); print('success')"
+    - python -m trace --trace --ignore-dir %CONDA_PREFIX% downstream_tests.py  # [win]
+    - python -m trace --trace --ignore-dir $CONDA_PREFIX downstream_tests.py   # [unix]
     - test -f ${PREFIX}/lib/libtiff.a  # [not win]
     - test -f ${PREFIX}/lib/libtiffxx.a  # [not win]
     - test -f ${PREFIX}/lib/libtiff{{ SHLIB_EXT }}  # [not win]
