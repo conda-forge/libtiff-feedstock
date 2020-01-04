@@ -16,6 +16,10 @@ try:
 except ImportError:
     pass
 
-import tifffile
-arr = tifffile.imread(image_name)
-np.testing.assert_array_equal(arr, PIL_arr)
+try:
+    # Tifffile isn't installable on all platforms yet
+    import tifffile
+    arr = tifffile.imread(image_name)
+    np.testing.assert_array_equal(arr, PIL_arr)
+except ImportError:
+    pass

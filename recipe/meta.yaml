@@ -53,9 +53,9 @@ test:
   requires:
     # Wondering how badly this breaks this for opencv and pillow
     - python 3.7  # Test with only 1 version of python
-    - opencv      # [not (aarch64 or ppc64le)]
     - pillow
-    - tifffile
+    - opencv      # [not (aarch64 or ppc64le)]
+    - tifffile    # [not (aarch64 or ppc64le)]
   files:
     - hopper_lzw.tif
     - downstream_tests.py
