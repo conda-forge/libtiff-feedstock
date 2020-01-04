@@ -5,17 +5,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: 5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634
-  patches:
-    - patches/fix_TIFFReadRawStrip_man_page_typo.patch
-    - use_unix_io.patch
+  - url: https://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
+    sha256: 5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634
+    folder: .
+    patches:
+      - patches/0001-CVE-2017-11613_part1.patch
+      - patches/0002-CVE-2017-11613_part2.patch
+      - patches/fix_TIFFReadRawStrip_man_page_typo.patch
+      - use_unix_io.patch
 
     # https://github.com/python-pillow/Pillow/issues/4237
     # https://gitlab.com/libtiff/libtiff/issues/173
     # This change isn't so safe as it stops compatibility with libtiff on pypi
     # https://github.com/conda-forge/libtiff-feedstock/pull/49#issuecomment-570708183
     # - patches/173_tif_unix_and_tif_win32_compatibility.patch
+  - url: https://github.com/python-pillow/Pillow/raw/master/Tests/images/hopper_lzw.tif
+    sha256: 246e5de06ed6f4c63d8389fcb3342b18909e0f362a5a22f76f779ad52f46090d
+    fn: hopper_lzw.tif
 
 build:
   number: 4
@@ -57,8 +63,9 @@ test:
     - opencv      # [not (aarch64 or ppc64le)]
     - tifffile    # [not (aarch64 or ppc64le)]
   files:
-    - hopper_lzw.tif
     - downstream_tests.py
+  source_files:
+    - hopper_lzw.tif
   commands:
     - python -m trace --trace --ignore-dir %CONDA_PREFIX% downstream_tests.py  # [win]
     - python -m trace --trace --ignore-dir $CONDA_PREFIX downstream_tests.py   # [unix]
