@@ -52,8 +52,8 @@ requirements:
 test:
   requires:
     # Wondering how badly this breaks this for opencv and pillow
-    - python 3.7
-    - opencv
+    - python
+    - opencv      # [not (aarch64 or ppc64le)]
     - pillow
   files:
     - hopper_lzw.tif
