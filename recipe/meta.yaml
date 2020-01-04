@@ -52,7 +52,7 @@ requirements:
 test:
   requires:
     # Wondering how badly this breaks this for opencv and pillow
-    - python
+    - python 3.7  # Test with only 1 version of python
     - opencv      # [not (aarch64 or ppc64le)]
     - pillow
   files:
