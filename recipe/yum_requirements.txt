@@ -1,2 +1,0 @@
-# Used for regression testing.
-# mesa-libGL
