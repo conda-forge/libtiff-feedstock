@@ -23,9 +23,10 @@ source:
     # This change isn't so safe as it stops compatibility with libtiff on pypi
     # https://github.com/conda-forge/libtiff-feedstock/pull/49#issuecomment-570708183
     # - patches/173_tif_unix_and_tif_win32_compatibility.patch
-  - url: https://github.com/python-pillow/Pillow/raw/master/Tests/images/hopper_lzw.tif
-    sha256: 246e5de06ed6f4c63d8389fcb3342b18909e0f362a5a22f76f779ad52f46090d
-    fn: hopper_lzw.tif
+  # Test image used for regression testing
+  # - url: https://github.com/python-pillow/Pillow/raw/master/Tests/images/hopper_lzw.tif
+  #   sha256: 246e5de06ed6f4c63d8389fcb3342b18909e0f362a5a22f76f779ad52f46090d
+  #   fn: hopper_lzw.tif
 
 build:
   number: 4
@@ -61,16 +62,16 @@ requirements:
 
 test:
   requires:
-    # Wondering how badly this breaks this for opencv and pillow
-    - python 3.7  # Test with only 1 version of python
-    - pillow
-    - numpy
-    - opencv      # [not (aarch64 or ppc64le)]
-    - tifffile    # [not (aarch64 or ppc64le)]
-  files:
-    - downstream_tests.py
-  source_files:
-    - hopper_lzw.tif
+    # Regression testing since libtiff is only pinned to the major version
+    # - python 3.7  # Test with only 1 version of python
+    # - pillow
+    # - numpy
+    # - opencv      # [not (aarch64 or ppc64le)]
+    # - tifffile    # [not (aarch64 or ppc64le)]
+  # files:
+  #   - downstream_tests.py
+  # source_files:
+  #   - hopper_lzw.tif
   commands:
     - python -m trace --trace --ignore-dir %CONDA_PREFIX% downstream_tests.py  # [win]
     - python -m trace --trace --ignore-dir $CONDA_PREFIX downstream_tests.py   # [unix]
