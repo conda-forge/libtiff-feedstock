@@ -34,13 +34,13 @@ requirements:
     - jpeg
     - xz
     - zstd
-    - libwebp-base
+    - libwebp-base  # [linux or osx]
   run:
     - zlib
     - jpeg
     - xz
     - zstd
-    - libwebp
+    - libwebp  # [linux or osx]
 
 test:
   commands:
