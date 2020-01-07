@@ -20,13 +20,9 @@ docker_image:
 - condaforge/linux-anvil-aarch64
 jpeg:
 - '9'
-libwebp:
-- '1.0'
 pin_run_as_build:
   jpeg:
     max_pin: x
-  libwebp:
-    max_pin: x.x
   xz:
     max_pin: x.x
   zlib:
