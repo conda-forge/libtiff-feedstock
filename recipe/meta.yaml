@@ -67,7 +67,7 @@ test:
     # For opencv testing, add  mesa-libGL to the yum_requirements.txt file
     - opencv      # [not (aarch64 or ppc64le)]
     - tifffile    # [not (aarch64 or ppc64le)]
-    - imagecodecs  # [not (aarch64 or ppc64le)]
+    - imagecodecs-lite  # [not (aarch64 or ppc64le)]
   files:
     - downstream_tests.py
   source_files:
