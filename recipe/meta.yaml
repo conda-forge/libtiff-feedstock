@@ -73,9 +73,9 @@ test:
     # until full imagecodecs is supported in conda-forge
     # (imagecodecs-lite doesn't seem to support the decompression algorithm
     #  we need for this test)
-    - tifffile 2019   # [not (aarch64 or ppc64le)]
+    - tifffile 2019   # [not (aarch64 or ppc64le or osx)]
     # Pillow 7 seems to be incompatible with tifffile 2019
-    - pillow 6
+    - pillow
   files:
     - downstream_tests.py
   source_files:
