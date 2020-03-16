@@ -9,8 +9,6 @@ source:
     sha256: 5d29f32517dadb6dbcd1255ea5bbc93a2b54b94fbf83653b4d65c7d6775b8634
     folder: .
     patches:
-      - patches/0001-CVE-2017-11613_part1.patch
-      - patches/0002-CVE-2017-11613_part2.patch
       - patches/fix_TIFFReadRawStrip_man_page_typo.patch
       # It seems that a recent patch in tifffile 4.1 may have broken
       # binary compatibility on windows.
