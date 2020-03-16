@@ -66,8 +66,15 @@ test:
     - numpy
     # For opencv testing, add  mesa-libGL to the yum_requirements.txt file
     - opencv      # [not (aarch64 or ppc64le)]
-    - tifffile    # [not (aarch64 or ppc64le)]
-    - imagecodecs-lite  # [not (aarch64 or ppc64le)]
+    # tifffile 2020 became a noarch package and moved certain C dependencies
+    # to imagecodecs
+    # unfortunately, as of 2020/03/16, that package doesn't exist yet on
+    # conda-forge and is rather hard to build.
+    # for now, we will pin the tests to tifffile 2019
+    # until full imagecodecs is supported in conda-forge
+    # (imagecodecs-lite doesn't seem to support the decompression algorithm
+    #  we need for this test)
+    - tifffile 2019   # [not (aarch64 or ppc64le)]
   files:
     - downstream_tests.py
   source_files:
