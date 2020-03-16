@@ -22,9 +22,9 @@ source:
     # https://github.com/conda-forge/libtiff-feedstock/pull/49#issuecomment-570708183
     # - patches/173_tif_unix_and_tif_win32_compatibility.patch
   # Test image used for regression testing
-  # - url: https://github.com/python-pillow/Pillow/raw/master/Tests/images/hopper_lzw.tif
-  #   sha256: 246e5de06ed6f4c63d8389fcb3342b18909e0f362a5a22f76f779ad52f46090d
-  #   fn: hopper_lzw.tif
+  - url: https://github.com/python-pillow/Pillow/raw/master/Tests/images/hopper_lzw.tif
+    sha256: 246e5de06ed6f4c63d8389fcb3342b18909e0f362a5a22f76f779ad52f46090d
+    fn: hopper_lzw.tif
 
 build:
   number: 4
