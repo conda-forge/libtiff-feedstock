@@ -62,7 +62,6 @@ test:
   requires:
     # Regression testing since libtiff is only pinned to the major version
     - python 3.7  # Test with only 1 version of python
-    - pillow
     - numpy
     # For opencv testing, add  mesa-libGL to the yum_requirements.txt file
     - opencv      # [not (aarch64 or ppc64le)]
@@ -75,6 +74,8 @@ test:
     # (imagecodecs-lite doesn't seem to support the decompression algorithm
     #  we need for this test)
     - tifffile 2019   # [not (aarch64 or ppc64le)]
+    # Pillow 7 seems to be incompatible with tifffile 2019
+    - pillow 6
   files:
     - downstream_tests.py
   source_files:
