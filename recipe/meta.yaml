@@ -27,7 +27,7 @@ source:
     fn: hopper_lzw.tif
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
@@ -92,7 +92,7 @@ test:
     #    osx test has has some trouble with my regression tests.
     #    Since the patch doesn't affect OSX, we are just skipping the OSX tests.
     - python -m trace --trace --ignore-dir %CONDA_PREFIX% downstream_tests.py  # [win]
-    - python -m trace --trace --ignore-dir $CONDA_PREFIX downstream_tests.py   # [linux]
+    - python -m trace --trace --ignore-dir $CONDA_PREFIX downstream_tests.py   # [unix]
 
 about:
   home: http://www.libtiff.org/
