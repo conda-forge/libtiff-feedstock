@@ -8,6 +8,8 @@ cxx_compiler:
 - vs2015
 jpeg:
 - '9'
+numpy:
+- '1.14'
 pin_run_as_build:
   jpeg:
     max_pin: x
@@ -23,10 +25,6 @@ vc:
 - '14'
 xz:
 - '5.2'
-zip_keys:
-- - vc
-  - c_compiler
-  - cxx_compiler
 zlib:
 - '1.2'
 zstd:
