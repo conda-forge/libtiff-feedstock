@@ -44,7 +44,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - ninja  # [win]
-    - make  # [not win]
+    - make   # [not win]
   host:
     - zlib
     - jpeg
