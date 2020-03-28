@@ -51,7 +51,7 @@ test:
   downstreams:
     - pillow    # [not (ppc64le or aarch64)]
     # Without the version specifyer, then it tries to download opencv2???
-    - opencv 4  # [not (ppc64le or aarch64)]
+    - opencv 3.4  # [not (ppc64le or aarch64)]
     - tifffile  # [not (ppc64le or aarch64)]
   commands:
     - test -f ${PREFIX}/lib/libtiff.a  # [not win]
