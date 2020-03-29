@@ -45,7 +45,7 @@ requirements:
     - jpeg
     - xz
     - zstd
-    - libwebp  # [linux or osx]
+    - libwebp   # [linux or osx]
 
 test:
   downstreams:
