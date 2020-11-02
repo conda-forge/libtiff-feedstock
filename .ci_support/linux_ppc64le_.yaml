@@ -2,6 +2,8 @@ c_compiler:
 - gcc
 c_compiler_version:
 - '8'
+cdt_name:
+- cos7
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -14,6 +16,10 @@ docker_image:
 - condaforge/linux-anvil-ppc64le
 jpeg:
 - '9'
+libwebp_base:
+- '1.1'
+numpy:
+- '1.16'
 pin_run_as_build:
   jpeg:
     max_pin: x
@@ -21,11 +27,14 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
-  zstd:
-    max_pin: x.x.x
+target_platform:
+- linux-ppc64le
 xz:
 - '5.2'
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 zlib:
 - '1.2'
 zstd:
-- 1.4.4
+- '1.4'
