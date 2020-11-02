@@ -1,10 +1,6 @@
 #!/bin/bash
-
-if [[ $(uname) == Darwin ]]; then
-  export LIBRARY_SEARCH_VAR=DYLD_FALLBACK_LIBRARY_PATH
-elif [[ $(uname) == Linux ]]; then
-  export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
-fi
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./config
 
 # Pass explicit paths to the prefix for each dependency.
 ./configure --prefix="${PREFIX}" \
@@ -20,7 +16,9 @@ fi
             --with-zstd-lib-dir="${PREFIX}/lib"
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
-eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib make check
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != 1 ]]; then
+  make check
+fi
 make install
 
 rm -rf "${TIFF_BIN}" "${TIFF_SHARE}" "${TIFF_DOC}"
