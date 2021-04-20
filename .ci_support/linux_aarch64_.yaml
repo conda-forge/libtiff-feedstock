@@ -21,9 +21,9 @@ docker_image:
 jpeg:
 - '9'
 libwebp_base:
-- '1.1'
+- '1'
 numpy:
-- '1.16'
+- '1.17'
 pin_run_as_build:
   jpeg:
     max_pin: x

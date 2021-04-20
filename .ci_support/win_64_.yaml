@@ -9,7 +9,7 @@ cxx_compiler:
 jpeg:
 - '9'
 numpy:
-- '1.16'
+- '1.17'
 pin_run_as_build:
   jpeg:
     max_pin: x
