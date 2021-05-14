@@ -8,8 +8,6 @@ cxx_compiler:
 - vs2017
 jpeg:
 - '9'
-numpy:
-- '1.16'
 pin_run_as_build:
   jpeg:
     max_pin: x
