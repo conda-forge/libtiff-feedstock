@@ -8,8 +8,11 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_:
-        CONFIG: osx_64_
+      osx_64_numpy1.17:
+        CONFIG: osx_64_numpy1.17
+        UPLOAD_PACKAGES: 'True'
+      osx_64_numpy1.19:
+        CONFIG: osx_64_numpy1.19
         UPLOAD_PACKAGES: 'True'
       osx_arm64_:
         CONFIG: osx_arm64_
