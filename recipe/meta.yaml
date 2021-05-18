@@ -1,4 +1,4 @@
-{% set version = "4.2.0" %}
+{% set version = "4.3.0" %}
 
 package:
   name: libtiff
@@ -6,17 +6,21 @@ package:
 
 source:
   url: https://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: eb0484e568ead8fa23b513e9b0041df7e327f4ee2d22db5a533929dfc19633cb
+  sha256: 0e46e5acb087ce7d1ac53cf4f56a09b221537fc86dfc5daaad1c2e89e1b37ac8
   patches:
-    - patches/fix_TIFFReadRawStrip_man_page_typo.patch
     # It seems that a recent patch in tifffile 4.1 may have broken
     # binary compatibility on windows.
     # https://gitlab.com/libtiff/libtiff/issues/173
     # https://github.com/python-pillow/Pillow/issues/4237
     - patches/use_unix_io.patch
+    # This patch is included in >4.3.0
+    # remove automake and autoconf when removing this patch
+    # also remember to remove the `autoreconf` command in the `build.sh`
+    # script
+    - patches/243_osx_buidl_failing_patch.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
@@ -34,7 +38,10 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - ninja  # [win]
-    - make  # [not win]
+    - make      # [unix]
+    # automake and autoconf are only necessary for patch 243
+    - automake  # [unix]
+    - autoconf  # [unix]
   host:
     - zlib
     - jpeg
