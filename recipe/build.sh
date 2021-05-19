@@ -2,6 +2,9 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./config
 
+# Remove this when the patch to the configure.ac file is removed
+autoreconf
+
 # Pass explicit paths to the prefix for each dependency.
 ./configure --prefix="${PREFIX}" \
             --host=$HOST \

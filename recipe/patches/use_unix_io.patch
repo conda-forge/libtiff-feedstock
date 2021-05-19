@@ -1,14 +1,14 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d0285be0..52e2ee58 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -592,9 +592,6 @@ check_include_file(OpenGL/glu.h HAVE_OPENGL_GLU_H)
+diff --git a/cmake/WindowsSupport.cmake b/cmake/WindowsSupport.cmake
+index 93c1309..5a2eaa9 100644
+--- a/cmake/WindowsSupport.cmake
++++ b/cmake/WindowsSupport.cmake
+@@ -30,9 +30,6 @@ endif()
  
- # Win32 IO
- set(win32_io FALSE)
+ # Win32 file I/O
+ set(win32_io_default OFF)
 -if(WIN32)
--  set(win32_io TRUE)
+-    set(win32_io_default ON)
 -endif()
  
- set(USE_WIN32_FILEIO ${win32_io})
+ option(win32-io "Use Win32 I/O" ${win32_io_default})
  
