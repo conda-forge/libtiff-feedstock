@@ -52,14 +52,8 @@ requirements:
     - jbig
     - libwebp-base  # [linux or osx]
   run:
-    - zlib
-    - jpeg
-    - xz
-    - zstd
-    - lerc
-    - libdeflate
+    # jbig doesn't have run exports at the time of writing the recipe
     - jbig
-    - libwebp-base  # [linux or osx]
 
 test:
   downstreams:
