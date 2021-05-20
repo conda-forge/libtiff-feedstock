@@ -20,7 +20,7 @@ source:
     - patches/243_osx_buidl_failing_patch.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   # Does a very good job of maintaining compatibility.
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
@@ -47,13 +47,13 @@ requirements:
     - jpeg
     - xz
     - zstd
+    - lerc
+    - libdeflate
+    - jbig
     - libwebp-base  # [linux or osx]
   run:
-    - zlib
-    - jpeg
-    - xz
-    - zstd
-    - libwebp-base  # [linux or osx]
+    # jbig doesn't have run exports at the time of writing the recipe
+    - jbig
 
 test:
   downstreams:
