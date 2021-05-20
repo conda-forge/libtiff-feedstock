@@ -13,7 +13,7 @@ source:
     # https://gitlab.com/libtiff/libtiff/issues/173
     # https://github.com/python-pillow/Pillow/issues/4237
     - patches/use_unix_io.patch
-    # This patch is included in >4.3.0
+    # This patch is included in >4.3.0.
     # remove automake and autoconf when removing this patch
     # also remember to remove the `autoreconf` command in the `build.sh`
     # script
