@@ -8,8 +8,8 @@ cxx_compiler:
 - vs2017
 jpeg:
 - '9'
-lerc:
-- '3'
+libdeflate:
+- '1.10'
 pin_run_as_build:
   jpeg:
     max_pin: x
