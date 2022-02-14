@@ -14,8 +14,8 @@ cxx_compiler_version:
 - '11'
 jpeg:
 - '9'
-lerc:
-- '3'
+libdeflate:
+- '1.10'
 libwebp_base:
 - '1'
 macos_machine:
