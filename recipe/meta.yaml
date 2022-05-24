@@ -54,8 +54,7 @@ requirements:
 test:
   downstreams:
     - pillow >=8
-    # Without the version specifyer, then it tries to download opencv2???
-    - opencv >=4
+    - py-opencv >=4
     - tifffile
   commands:
     - test -f ${PREFIX}/lib/libtiff.a  # [not win]
