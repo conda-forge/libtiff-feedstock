@@ -9,7 +9,7 @@ cxx_compiler:
 jpeg:
 - '9'
 libdeflate:
-- '1.10'
+- '1.12'
 pin_run_as_build:
   jpeg:
     max_pin: x
