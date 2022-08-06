@@ -2,6 +2,6 @@ __migrator:
   build_number: 1
   kind: version
   migration_number: 1
-lerc:
-- '4'
-migrator_ts: 1658977915.6068478
+libdeflate:
+- '1.13'
+migrator_ts: 1659712131.0230887
