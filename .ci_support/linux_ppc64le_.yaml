@@ -19,7 +19,7 @@ jpeg:
 lerc:
 - '4'
 libdeflate:
-- '1.12'
+- '1.13'
 libwebp_base:
 - '1'
 pin_run_as_build:
