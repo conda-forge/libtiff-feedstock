@@ -15,12 +15,13 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 4
-  skip: true  # [win and vc<14]
+  number: 5
   # Does a very good job of maintaining compatibility.
+  # Except broke abi between 4.4 and 4.5.0
+  #    https://github.com/conda-forge/libtiff-feedstock/issues/77
   #    https://abi-laboratory.pro/tracker/timeline/libtiff/
   run_exports:
-    - {{ pin_subpackage('libtiff', max_pin='x') }}
+    - {{ pin_subpackage('libtiff', max_pin='x.x') }}
   missing_dso_whitelist:
     # Only used by libtiff,bin/tiffgt (a viewer), which is ok.
     - /opt/X11/lib/libGL.1.dylib
@@ -34,9 +35,6 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
     - make      # [unix]
-    # automake and autoconf are only necessary for patch 243
-    - automake  # [unix]
-    - autoconf  # [unix]
   host:
     - zlib
     - jpeg
