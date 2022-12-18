@@ -58,7 +58,9 @@ test:
     - if not exist %PREFIX%\\Library\\bin\\tiff.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\tiffxx.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\libtiff.dll exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\bin\\libtiffxx.dll exit 1  # [win]
+    # It seems that libtiffxx does not have a dll on windows
+    # https://gitlab.com/libtiff/libtiff/-/merge_requests/338
+    - if not exist %PREFIX%\\Library\\lib\\tiffxx.lib exit 1  # [win]
 
 about:
   home: http://www.libtiff.org/
