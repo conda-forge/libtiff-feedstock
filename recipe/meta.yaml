@@ -45,13 +45,14 @@ requirements:
     - libwebp-base  # [linux or osx]
 
 test:
-  downstreams:
-    - pillow >=8
-    - py-opencv >=4
-    - tifffile
+  # TODO: enable this after the release. The ABI broke
+  # downstreams:
+  #   - pillow >=8
+  #   - py-opencv >=4
+  #   - tifffile
   commands:
-    - test -f ${PREFIX}/lib/libtiff.a  # [not win]
-    - test -f ${PREFIX}/lib/libtiffxx.a  # [not win]
+    - test ! -f ${PREFIX}/lib/libtiff.a  # [not win]
+    - test ! -f ${PREFIX}/lib/libtiffxx.a  # [not win]
     - test -f ${PREFIX}/lib/libtiff{{ SHLIB_EXT }}  # [not win]
     - test -f ${PREFIX}/lib/libtiffxx{{ SHLIB_EXT }}  # [not win]
     - if not exist %PREFIX%\\Library\\bin\\tiff.dll exit 1  # [win]
