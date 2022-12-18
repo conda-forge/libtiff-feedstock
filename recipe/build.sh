@@ -4,6 +4,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./config
 
 # Pass explicit paths to the prefix for each dependency.
 ./configure --prefix="${PREFIX}" \
+            --disable-static \
             --host=$HOST \
             --build=$BUILD \
             --with-zlib-include-dir="${PREFIX}/include" \
