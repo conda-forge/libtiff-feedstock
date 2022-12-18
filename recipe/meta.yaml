@@ -56,7 +56,6 @@ test:
     - test -f ${PREFIX}/lib/libtiff{{ SHLIB_EXT }}  # [not win]
     - test -f ${PREFIX}/lib/libtiffxx{{ SHLIB_EXT }}  # [not win]
     - if not exist %PREFIX%\\Library\\bin\\tiff.dll exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\bin\\tiffxx.dll exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\libtiff.dll exit 1  # [win]
     # It seems that libtiffxx does not have a dll on windows
     # https://gitlab.com/libtiff/libtiff/-/merge_requests/338
