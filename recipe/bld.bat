@@ -15,5 +15,10 @@ cmake --build . --target install --config Release
 if errorlevel 1 exit /b 1
 
 copy "%LIBRARY_PREFIX%"\bin\tiff.dll "%LIBRARY_PREFIX%"\bin\libtiff.dll
-copy "%LIBRARY_PREFIX%"\bin\tiffxx.dll "%LIBRARY_PREFIX%"\bin\libtiffxx.dll
+if errorlevel 1 exit /b 1
 copy "%LIBRARY_PREFIX%"\lib\tiff.lib "%LIBRARY_PREFIX%"\lib\libtiff.lib
+if errorlevel 1 exit /b 1
+
+:REM https://gitlab.com/libtiff/libtiff/-/merge_requests/338
+:REM copy "%LIBRARY_PREFIX%"\bin\tiffxx.dll "%LIBRARY_PREFIX%"\bin\libtiffxx.dll
+:REM if errorlevel 1 exit /b 1
