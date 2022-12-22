@@ -46,10 +46,11 @@ requirements:
 
 test:
   # TODO: enable this after the release. The ABI broke
-  # downstreams:
-  #   - pillow >=8
-  #   - py-opencv >=4
-  #   - tifffile
+  downstreams:
+    - pillow 9.0.2=py310hdbb7713_4  # [win]
+    - pillow >=9                    # [not win]
+    # - py-opencv >=4
+    # - tifffile
   commands:
     - test ! -f ${PREFIX}/lib/libtiff.a  # [not win]
     - test ! -f ${PREFIX}/lib/libtiffxx.a  # [not win]
