@@ -19,7 +19,7 @@ jpeg:
 lerc:
 - '4'
 libdeflate:
-- '1.14'
+- '1.16'
 libwebp_base:
 - '1'
 target_platform:
