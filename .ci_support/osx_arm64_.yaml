@@ -12,12 +12,12 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '14'
-jpeg:
-- '9'
 lerc:
 - '4'
 libdeflate:
 - '1.17'
+libjpeg_turbo:
+- 2.1.4
 libwebp_base:
 - '1'
 macos_machine:
