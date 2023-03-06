@@ -1,11 +1,11 @@
-About libtiff
-=============
+About libtiff-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libtiff-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.libtiff.org/
 
 Package license: HPND
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libtiff-feedstock/blob/main/LICENSE.txt)
 
 Summary: Support for the Tag Image File Format (TIFF).
 
