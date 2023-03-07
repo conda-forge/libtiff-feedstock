@@ -23,7 +23,7 @@ lerc:
 libdeflate:
 - '1.17'
 libjpeg_turbo:
-- 2.1.4
+- 2.1.5
 libwebp_base:
 - '1'
 target_platform:
