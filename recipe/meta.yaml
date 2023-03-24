@@ -15,7 +15,7 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 5
+  number: 6
   # Does a very good job of maintaining compatibility.
   # Except broke abi between 4.4 and 4.5.0
   #    https://github.com/conda-forge/libtiff-feedstock/issues/77
