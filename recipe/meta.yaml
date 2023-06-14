@@ -1,4 +1,4 @@
-{% set version = "4.5.0" %}
+{% set version = "4.5.1" %}
 
 package:
   name: libtiff
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://download.osgeo.org/libtiff/tiff-{{ version }}.tar.gz
-  sha256: c7a1d9296649233979fa3eacffef3fa024d73d05d589cb622727b5b08c423464
+  sha256: d7f38b6788e4a8f5da7940c5ac9424f494d8a79eba53d555f4a507167dca5e2b
   patches:
     # It seems that a recent patch in tifffile 4.1 may have broken
     # binary compatibility on windows.
@@ -15,7 +15,7 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 6
+  number: 0
   # Does a very good job of maintaining compatibility.
   # Except broke abi between 4.4 and 4.5.0
   #    https://github.com/conda-forge/libtiff-feedstock/issues/77
