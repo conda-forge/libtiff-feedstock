@@ -17,7 +17,7 @@ lerc:
 libdeflate:
 - '1.19'
 libjpeg_turbo:
-- 2.1.5
+- '3'
 libwebp_base:
 - '1'
 macos_machine:
