@@ -9,7 +9,7 @@ cxx_compiler:
 lerc:
 - '4'
 libdeflate:
-- '1.19'
+- '1.20'
 libjpeg_turbo:
 - '3'
 target_platform:
