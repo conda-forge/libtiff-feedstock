@@ -71,6 +71,7 @@ about:
     This software provides support for the Tag Image File Format (TIFF), a
     widely used format for storing image data.
   doc_url: http://www.libtiff.org/document.html
+  dev_url: https://gitlab.com/libtiff/libtiff
 
 extra:
   recipe-maintainers:
