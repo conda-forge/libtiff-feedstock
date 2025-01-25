@@ -51,9 +51,8 @@ test:
   #   - pillow >=8
   #   - py-opencv >=4
   #   - tifffile
-  source_files:
-    # see https://gitlab.com/libtiff/libtiff/-/blob/master/build/test_cmake/CMakeLists.txt
-    - build/test_cmake
+  files:
+    - cmake_test
   requires:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -72,7 +71,7 @@ test:
     - if not exist %PREFIX%\\Library\\lib\\tiffxx.lib exit 1  # [win]
 
     # test correctness of CMake metadata
-    - cd build/cmake_test
+    - cd cmake_test
     - cmake -GNinja $CMAKE_ARGS .   # [unix]
     - cmake -GNinja %CMAKE_ARGS% .  # [win]
     - cmake --build .
