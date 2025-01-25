@@ -15,7 +15,7 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 3
+  number: 4
   # Does a very good job of maintaining compatibility.
   # Except broke abi between 4.4 and 4.5.0
   #    https://github.com/conda-forge/libtiff-feedstock/issues/77
@@ -51,6 +51,15 @@ test:
   #   - pillow >=8
   #   - py-opencv >=4
   #   - tifffile
+  source_files:
+    # see https://gitlab.com/libtiff/libtiff/-/blob/master/build/test_cmake/CMakeLists.txt
+    - build/test_cmake
+  requires:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - pkg-config
   commands:
     - test ! -f ${PREFIX}/lib/libtiff.a  # [not win]
     - test ! -f ${PREFIX}/lib/libtiffxx.a  # [not win]
@@ -61,6 +70,12 @@ test:
     # It seems that libtiffxx does not have a dll on windows
     # https://gitlab.com/libtiff/libtiff/-/merge_requests/338
     - if not exist %PREFIX%\\Library\\lib\\tiffxx.lib exit 1  # [win]
+
+    # test correctness of CMake metadata
+    - cd build/cmake_test
+    - cmake -GNinja $CMAKE_ARGS .   # [unix]
+    - cmake -GNinja %CMAKE_ARGS% .  # [win]
+    - cmake --build .
 
 about:
   home: http://www.libtiff.org/
