@@ -15,7 +15,7 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 3
+  number: 4
   # Does a very good job of maintaining compatibility.
   # Except broke abi between 4.4 and 4.5.0
   #    https://github.com/conda-forge/libtiff-feedstock/issues/77
@@ -51,6 +51,14 @@ test:
   #   - pillow >=8
   #   - py-opencv >=4
   #   - tifffile
+  files:
+    - cmake_test
+  requires:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - pkg-config
   commands:
     - test ! -f ${PREFIX}/lib/libtiff.a  # [not win]
     - test ! -f ${PREFIX}/lib/libtiffxx.a  # [not win]
@@ -62,6 +70,12 @@ test:
     # https://gitlab.com/libtiff/libtiff/-/merge_requests/338
     - if not exist %PREFIX%\\Library\\lib\\tiffxx.lib exit 1  # [win]
 
+    # test correctness of CMake metadata
+    - cd cmake_test
+    - cmake -GNinja $CMAKE_ARGS .   # [unix]
+    - cmake -GNinja %CMAKE_ARGS% .  # [win]
+    - cmake --build .
+
 about:
   home: http://www.libtiff.org/
   license: HPND
@@ -71,6 +85,7 @@ about:
     This software provides support for the Tag Image File Format (TIFF), a
     widely used format for storing image data.
   doc_url: http://www.libtiff.org/document.html
+  dev_url: https://gitlab.com/libtiff/libtiff
 
 extra:
   recipe-maintainers:
