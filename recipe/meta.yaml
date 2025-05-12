@@ -15,7 +15,7 @@ source:
     - patches/use_unix_io.patch
 
 build:
-  number: 4
+  number: 6
   # Does a very good job of maintaining compatibility.
   # Except broke abi between 4.4 and 4.5.0
   #    https://github.com/conda-forge/libtiff-feedstock/issues/77
@@ -29,13 +29,14 @@ build:
 
 requirements:
   build:
-    - libtool  # [unix]
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - cmake  # [win]
-    - ninja  # [win]
-    - make      # [unix]
+    - cmake      # [win]
+    - ninja      # [win]
+    - make       # [unix]
+    - libtool    # [unix]
+    - diffutils  # [linux]
   host:
     - zlib
     - libjpeg-turbo

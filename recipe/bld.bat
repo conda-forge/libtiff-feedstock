@@ -1,7 +1,8 @@
 mkdir build_%c_compiler%
 cd build_%c_compiler%
 
-cmake -GNinja                                    ^
+cmake %CMAKE_ARGS% -GNinja                       ^
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5         ^
       -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"  ^
       -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%"     ^
       -DCMAKE_BUILD_TYPE=Release                 ^
