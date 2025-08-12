@@ -23,3 +23,8 @@ if errorlevel 1 exit /b 1
 :REM https://gitlab.com/libtiff/libtiff/-/merge_requests/338
 :REM copy "%LIBRARY_PREFIX%"\bin\tiffxx.dll "%LIBRARY_PREFIX%"\bin\libtiffxx.dll
 :REM if errorlevel 1 exit /b 1
+
+findstr /v "^[^.]*.private:" "%LIBRARY_PREFIX%"\lib\pkgconfig\libtiff-4.pc > libtiff-4.pc.new
+if errorlevel 1 exit /b 1
+move /y libtiff-4.pc.new "%LIBRARY_PREFIX%"\lib\pkgconfig\libtiff-4.pc
+if errorlevel 1 exit /b 1

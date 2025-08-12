@@ -29,3 +29,6 @@ rm -rf "${PREFIX}/share"
 
 # We can remove this when we start using the new conda-build.
 find $PREFIX -name '*.la' -delete
+
+grep -v "^[^\.]*\.private:" "${PREFIX}/lib/pkgconfig/libtiff-4.pc" > libtiff-4.pc.new
+mv libtiff-4.pc.new "${PREFIX}/lib/pkgconfig/libtiff-4.pc"
