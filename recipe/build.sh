@@ -29,3 +29,13 @@ rm -rf "${PREFIX}/share"
 
 # We can remove this when we start using the new conda-build.
 find $PREFIX -name '*.la' -delete
+
+# hattne + hmaarrfk --- Aug 11, 2025
+# https://github.com/conda-forge/libtiff-feedstock/issues/113
+# We choose to remove the private libraries from the pkg-config file
+# so that downstream packages can more freely depend on libtiff without
+# also depending on its downstream dependencies
+# We manually inspected the headers to determine that the headers of the dependencies are
+# not exposed in the public headers of libtiff
+grep -v "^[^\.]*\.private:" "${PREFIX}/lib/pkgconfig/libtiff-4.pc" > libtiff-4.pc.new
+mv libtiff-4.pc.new "${PREFIX}/lib/pkgconfig/libtiff-4.pc"
