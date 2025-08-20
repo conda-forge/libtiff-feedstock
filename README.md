@@ -9,6 +9,8 @@ Package license: HPND
 
 Summary: Support for the Tag Image File Format (TIFF).
 
+Development: https://gitlab.com/libtiff/libtiff
+
 Documentation: http://www.libtiff.org/document.html
 
 This software provides support for the Tag Image File Format (TIFF), a
